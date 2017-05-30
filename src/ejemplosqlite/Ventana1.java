@@ -61,12 +61,14 @@ public class Ventana1 extends javax.swing.JFrame {
         etiquetaEdad = new javax.swing.JLabel();
         etiquetaNombre = new javax.swing.JLabel();
         botonInsertar = new javax.swing.JButton();
+        botonModificar = new javax.swing.JButton();
+        botonVolver = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         etiquetaFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1260, 660));
         setMinimumSize(new java.awt.Dimension(1260, 660));
-        setPreferredSize(new java.awt.Dimension(1260, 660));
         setResizable(false);
         setSize(new java.awt.Dimension(1260, 660));
 
@@ -81,7 +83,7 @@ public class Ventana1 extends javax.swing.JFrame {
         tablaJugadores.setFont(new java.awt.Font("Berlin Sans FB", 1, 16)); // NOI18N
         tablaJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null}
             },
             new String [] {
                 "Nombre", "Apellidos", "DNI", "Edad"
@@ -97,34 +99,37 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaJugadores);
 
-        panelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 590, 340));
+        panelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 590, 350));
 
+        botonBorrar.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
         botonBorrar.setText("Borrar Jugador");
-        botonBorrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonBorrar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         botonBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBorrarActionPerformed(evt);
             }
         });
-        panelFondo.add(botonBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 360, 180, 100));
+        panelFondo.add(botonBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 270, 180, 100));
 
+        botonSalir.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
         botonSalir.setText("Salir");
-        botonSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonSalir.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSalirActionPerformed(evt);
             }
         });
-        panelFondo.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 490, 180, 100));
+        panelFondo.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 530, 180, 100));
 
+        botonVaciar.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
         botonVaciar.setText("Vaciar campos");
-        botonVaciar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonVaciar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         botonVaciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVaciarActionPerformed(evt);
             }
         });
-        panelFondo.add(botonVaciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 180, 100));
+        panelFondo.add(botonVaciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 180, 100));
         panelFondo.add(cuadroApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 230, -1));
         panelFondo.add(cuadroDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 230, -1));
         panelFondo.add(cuadroEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 230, -1));
@@ -156,14 +161,36 @@ public class Ventana1 extends javax.swing.JFrame {
         etiquetaNombre.setText("Nombre del jugador");
         panelFondo.add(etiquetaNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 180, -1));
 
+        botonInsertar.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
         botonInsertar.setText("Insertar Jugador");
-        botonInsertar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonInsertar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         botonInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonInsertarActionPerformed(evt);
             }
         });
-        panelFondo.add(botonInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 180, 100));
+        panelFondo.add(botonInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 180, 100));
+
+        botonModificar.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        botonModificar.setText("Modificar Jugador");
+        botonModificar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        botonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarActionPerformed(evt);
+            }
+        });
+        panelFondo.add(botonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 180, 100));
+
+        botonVolver.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        botonVolver.setText("Volver");
+        botonVolver.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
+        panelFondo.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 400, 180, 100));
+        panelFondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 1180, -1));
 
         etiquetaFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Brais Núñez\\Desktop\\Desarrollo de aplicaciones multiplataforma\\Programacion\\Apps personales\\JavaLearner\\src\\imagenes\\fondoSeleccion.jpg")); // NOI18N
         etiquetaFondo.setPreferredSize(new java.awt.Dimension(1260, 660));
@@ -199,6 +226,17 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void insertarJugador(){
         
+        String vacio1, vacio2, vacio3, vacio4;
+        vacio1 = cuadroNombre.getText();
+        vacio2 = cuadroApellidos.getText();
+        vacio3 = cuadroDNI.getText();
+        vacio4 = cuadroEdad.getText();
+        
+        if(vacio1.isEmpty() || vacio2.isEmpty() || vacio3.isEmpty() || vacio4.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe rellenar todos los datos de un jugador para poder introducirlo");
+            
+        }
+        else{
         try {
             PreparedStatement consultaAct = Conexiones.conexion.prepareStatement("Insert into Jugador(nombreJug,apellidosJug,dniJug,edadJug) values(?,?,?,?)");
             
@@ -211,12 +249,15 @@ public class Ventana1 extends javax.swing.JFrame {
             if (comprobacion > 0) {
                 
                 JOptionPane.showMessageDialog(null, "Guardado completado satisfactoriamente");
+           
             }
+             modeloTabla.addRow(jug);
+             tablaJugadores.setModel(modeloTabla);
+             
             
-            modeloTabla.addRow(jug);
-            tablaJugadores.setModel(modeloTabla);
         } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Guardado erróneo");
+                JOptionPane.showMessageDialog(null,"Guardado erróneo"+ex);
+        }
         }        
     }
     
@@ -245,16 +286,58 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void borrarJugador(){
         
-         try {
+        int filaEscogida = tablaJugadores.getSelectedRow();
+        
+        if(filaEscogida >0){
+        try {
+                  
+            st = Conexiones.conexion.createStatement();
+           
+           String dniABorrar = (String) tablaJugadores.getValueAt(filaEscogida, 2);
+           int comprobacion2 = st.executeUpdate("delete from Jugador where dniJug =" + "'"+ dniABorrar +"'");
             
+           if (comprobacion2>0){
+               JOptionPane.showMessageDialog(null, "Jugador eliminado");
+       
+            modeloTabla.removeRow(filaEscogida);
+            tablaJugadores.setModel(modeloTabla);
             
-            Statement eliminar =  Conexiones.conexion.createStatement();
-            eliminar.executeUpdate("DELETE from Jugador where dniJug=" + JOptionPane.showInputDialog("Introduzca el DNI del jugador que desee eliminar"));
-            System.out.println("Borrado completo");
+        }
+                         
+        } catch (SQLException ex) {
+
+            JOptionPane.showMessageDialog(null, "Borrado erróneo" + ex.getMessage());
+        } 
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un jugador para poder borrarlo");
+        }
+        
+        
+    }
+    
+    public void modificarJugador(){
+          
+            String consultaModificacion = " UPDATE Jugador SET "+"nombreJug"+"='"+cuadroNombre.getText()+"',"+"apellidosJug"+"='"+cuadroApellidos.getText()+"',"+"dniJug"+"='"+cuadroDNI.getText()+"',"+"edadJug"+"='"+cuadroEdad.getText()+"'";
+            
+     try {
+         
+            st = Conexiones.conexion.createStatement();
+
+            st.execute(consultaModificacion);    
+
+            modeloTabla.setValueAt(cuadroNombre.getText(),tablaJugadores.getSelectedRow(),0);
+
+            modeloTabla.setValueAt(cuadroApellidos.getText(),tablaJugadores.getSelectedRow(),1);
+
+            modeloTabla.setValueAt(cuadroDNI.getText(),tablaJugadores.getSelectedRow(),2);
+            
+            modeloTabla.setValueAt(cuadroEdad.getText(),tablaJugadores.getSelectedRow(),3);
 
         } catch (SQLException ex) {
-            System.out.println("Lo sentimos, el jugador que desea eliminar no se encuentra en la base ");
-        }
+
+            System.out.println("Actualización errónea" +ex);
+
+        }     
     }
        
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -273,32 +356,11 @@ public class Ventana1 extends javax.swing.JFrame {
         cuadroEdad.setText("");
                      
     }//GEN-LAST:event_botonVaciarActionPerformed
-    
-    
-    
+      
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
-             
-        try {
-//            int filaEscogida = tablaJugadores.getSelectedRow();
+        
+        borrarJugador();
             
-            st = Conexiones.conexion.createStatement();
-           
-              
-           int comprobacion = st.executeUpdate("delete from Jugador where dniJug =" + "'"+ JOptionPane.showInputDialog("Introduzca el DNI del jugador que desea borrar")+"'");
-            
-//            modeloTabla.removeRow(filaEscogida);
-           if (comprobacion > 0){
-               JOptionPane.showMessageDialog(null, "Jugador eliminado");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "El DNI introducido no corresponde a ningún jugador");
-           }
-                              
-        } catch (SQLException ex) {
-
-            JOptionPane.showMessageDialog(null, "Borrado erróneo" + ex.getMessage());
-        }              
-
     }//GEN-LAST:event_botonBorrarActionPerformed
 
     private void cuadroNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadroNombreActionPerformed
@@ -313,6 +375,21 @@ public class Ventana1 extends javax.swing.JFrame {
         insertarJugador();
         
     }//GEN-LAST:event_botonInsertarActionPerformed
+
+    private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+       
+        modificarJugador();
+        
+    }//GEN-LAST:event_botonModificarActionPerformed
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        
+        VentanaInicial venIni = new VentanaInicial();
+        venIni.setVisible(true);
+        venIni.setLocationRelativeTo(null);
+        this.dispose();
+        
+    }//GEN-LAST:event_botonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,8 +430,10 @@ public class Ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonBorrar;
     private javax.swing.JButton botonInsertar;
+    private javax.swing.JButton botonModificar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonVaciar;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JTextField cuadroApellidos;
     private javax.swing.JTextField cuadroDNI;
     private javax.swing.JTextField cuadroEdad;
@@ -365,6 +444,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaFondo;
     private javax.swing.JLabel etiquetaNombre;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel panelFondo;
     private javax.swing.JTable tablaJugadores;
     // End of variables declaration//GEN-END:variables

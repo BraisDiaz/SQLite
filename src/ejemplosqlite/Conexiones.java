@@ -10,7 +10,7 @@ import java.sql.*;
 public class Conexiones {
 
     static Connection conexion;
-    private String url = "C:\\Users\\Brais Núñez\\Desktop\\Desarrollo de aplicaciones multiplataforma\\Programacion\\3ªEvaluacion\\EjemploSQLite\\baseJugadores.db";
+    private String url = "C:\\Users\\Brais Núñez\\Desktop\\Desarrollo de aplicaciones multiplataforma\\Programacion\\3ªEvaluacion\\EjemploSQLite\\baseJugadores2.db";
      
     /**
      * Sirve para cargar los drivers que permiten el acceso a la base de datos.
